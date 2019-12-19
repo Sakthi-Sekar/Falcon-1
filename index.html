@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <h1>Falcon Automation Tool</h1>
+    <h2>Simple, Reliable, Intelligent</h2>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Getting Started')" id="defaultOpen">Getting Started</button>
+        <button class="tablinks" onclick="openCity(event, 'Concepts')">Concepts</button>
+        <button class="tablinks" onclick="openCity(event, 'Tools and Plugins')">Tools and Plugins</button>
+        <button class="tablinks" onclick="openCity(event, 'Troubleshooting')">Troubleshooting</button>
+        <button class="tablinks" onclick="openCity(event, 'Document History')">Document History</button>
+        <button class="tablinks" onclick="openCity(event, 'Guides')">Guides</button>
+        <button class="tablinks" onclick="openCity(event, 'Test Actions')">Test Actions</button>
+        <button class="tablinks" onclick="openCity(event, 'User Interface')">User Interface</button>
+        <button class="tablinks" onclick="openCity(event, 'References')">References</button>
+        <button class="tablinks" onclick="openCity(event, 'FAQ')">FAQ</button>
+        <button class="tablinks" onclick="openCity(event, 'About Us')">About Us</button>
+    </div>
+
+    <div id="Getting Started" class="tabcontent">
+        <h3>Getting Started</h3>
+        <ul>
+            <li>From your Segment UI’s Destinations page click on “Add Destination”.</li>
+            <li>Search for “mabl” within the Destinations Catalog and confirm the Source you’d like to connect to.</li>
+            <li>Drop the “API Key,” accessible from into your from your mabl workspace’s API keys page, into the Segment
+                Settings UI.</li>
+            <li>mabl processes the usage data into rolling 24 hour summaries hourly. It may take up to an hour for usage
+                to
+                begin to populate in your test coverage metrics.</li>
+        </ul>
+    </div>
+
+    <div id="Concepts" class="tabcontent">
+        <h3>Concepts</h3>
+        <p>Only mabl offers scriptless cross-browser web testing, auto-healing tests, visual testing, and diagnostics in
+            one simple service. mabl helps you improve the speed and quality of your release pipeline by allowing you to
+            test every release, at scale, on a single platform, with no infrastructure to manage.
+
+            This destination is maintained by mabl. For any issues with the destination, please reach out to the mabl
+            team.
+
+            NOTE: The mabl Destination is currently in beta, which means that they are still actively developing the
+            destination. This doc was last updated on 10 June, 2019. If you are interested in joining their beta program
+            or have any feedback to help improve the mabl Destination and its documentation, please let their team know!
+        </p>
+    </div>
+
+    <div id="Tools and Plugins" class="tabcontent">
+        <h3>Tools and Plugins</h3>
+        <p>You can send computed traits and audiences generated through Segment Personas to this destination as a user
+            property. To learn more about Personas, reach out for a demo.
+
+            For user-property destinations, an identify call will be sent to the destination for each user being added
+            and removed. The property name will be the snake_cased version of the audience name you provide with a
+            true/false value. For example, when a user first completes an order in the last 30 days, we will send an
+            identify call with the property order_completed_last_30days: true, and when this user no longer satisfies we
+            will set that value to false.
+
+            When the audience is first created an identify call is sent for every user in the audience. Subsequent syncs
+            will only send updates for those users which were added or removed since the last sync.</p>
+    </div>
+    <div id="Troubleshooting" class="tabcontent">
+        <h3>Troubleshooting</h3>
+        <ul>
+            <li>From your Segment UI’s Destinations page click on “Add Destination”.</li>
+            <li> Search for “Evergage” within the Destinations Catalog and confirm the Source you’d like to connect
+                to.</li>
+            <li> Enter your Evergage Account Key (this is the subdomain you use to login to Evergage with; if your
+                account is “testaccount.evergage.com”, then use “testaccount”);</li>
+            <li> Finally, enter the name of the Evergage Dataset you want data to flow to (by default this is
+                “engage”);</li>
+        </ul>
+    </div>
+    <div id="Document History" class="tabcontent">
+        <h3>Document History</h3>
+        <p>
+            Destinations are business tools or apps that you can connect to the data flowing through Segment. Some of
+            our most popular destinations are Google Analytics, Mixpanel, KISSmetrics, Customer.io, Intercom, and
+            KeenIO.
+
+            All of these tools run on the same data: who are your customers and what are they doing? But each tool
+            requires that you send that data in a slightly different format, which means that you’d have to write code
+            to track all of this information, again and again, for each tool, on each page of your app or website.
+        </p>
+    </div>
+    <div id="Guides" class="tabcontent">
+        <h3>Guides</h3>
+        <p>
+            We eliminate this process by introducing an abstraction layer. You send your data to us, and we understand
+            how to translate it so we can send it along to any destination. You enable destinations from the catalog in
+            the Segment App, and user data immediately starts flowing into those tools. No extra code required!
+
+            We support many categories of destinations, from advertising to marketing, email to customer support, CRM to
+            user testing, and even data warehouses. You can view a complete list of our destinations or check out our
+            destination page for a searchable list broken down by category.
+        </p>
+    </div>
+    <div id="Test Actions" class="tabcontent">
+        <h3>Test Actions</h3>
+        <p>
+            A warehouse is a central repository of data collected from one or more sources. This is what commonly comes
+            to mind you think about a relational database: structured data that fits neatly into rows and columns.
+
+            In Segment, a Warehouse is a special type destination. Instead of streaming data to the destination all the
+            time, we load data to them in bulk at a regular intervals. When we load data, we insert and update events
+            and objects, and automatically adjust their schema to fit the data you’ve sent to Segment.
+        </p>
+    </div>
+    <div id="User Interface" class="tabcontent">
+        <h3>User Interface</h3>
+    </div>
+    <div id="References" class="tabcontent">
+        <h3>References</h3>
+    </div>
+    <div id="FAQ" class="tabcontent">
+        <h3>FAQ</h3>
+    </div>
+    <div id="About Us" class="tabcontent">
+        <h3>About Us</h3>
+    </div>
+    <script>
+        function openCity(evt, docData) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(docData).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+
+</html>
